@@ -35,7 +35,6 @@ h1, h2, h3, h4, h5, h6 {
   font-family: 'Outfit', sans-serif;
 }
 
-/* Background Layers */
 .bg-mesh {
   position: fixed;
   inset: 0;
@@ -91,7 +90,6 @@ h1, h2, h3, h4, h5, h6 {
   position: relative;
 }
 
-/* Container for maximum width */
 .container {
   max-width: 1280px;
   margin: 0 auto;
@@ -99,7 +97,6 @@ h1, h2, h3, h4, h5, h6 {
   padding: 0 2rem;
 }
 
-/* Navbar */
 .navbar-wrapper {
   position: sticky;
   top: 0;
@@ -197,7 +194,6 @@ h1, h2, h3, h4, h5, h6 {
   transform: translateY(-1px);
 }
 
-/* Landing Section (Perfect & Simple Hero) */
 .hero-wrapper {
   flex: 1;
   display: flex;
@@ -309,7 +305,7 @@ h1, h2, h3, h4, h5, h6 {
 
 .btn-primary, .btn-secondary {
   padding: 0.85rem 2.2rem;
-  border-radius: 999px; /* Pill shape */
+  border-radius: 999px;
   font-size: 1rem;
   font-weight: 500;
   cursor: pointer;
@@ -354,7 +350,6 @@ h1, h2, h3, h4, h5, h6 {
   transform: translateY(-2px);
 }
 
-/* Animations */
 .animate-fade-in-up {
   opacity: 0;
   transform: translateY(20px);
@@ -383,21 +378,55 @@ h1, h2, h3, h4, h5, h6 {
   100% { opacity: 1; transform: translateY(0) scale(1); }
 }
 
-/* Mobile Adjustments */
 @media screen and (max-width: 768px) {
+  .container {
+    padding: 0 1.25rem;
+  }
+
+  .nav-links, .nav-actions {
+    display: none;
+  }
+  
+  .navbar {
+    justify-content: center;
+  }
+
   .hero-wrapper {
-    padding: 6rem 1.5rem 8rem;
+    padding: 2.5rem 1rem 5rem;
+  }
+
+  .hero-title {
+    font-size: clamp(2.2rem, 8vw, 3rem);
+    letter-spacing: -0.02em;
+    word-break: break-word;
+    hyphens: auto;
+  }
+
+  .hero-subtitle {
+    font-size: 1.05rem;
+    padding: 0;
+    margin-bottom: 2rem;
   }
 
   .hero-actions {
     flex-direction: column;
     width: 100%;
-    max-width: 320px;
-    gap: 1rem;
+    max-width: 100%;
+    gap: 0.8rem;
   }
   
   .btn-primary, .btn-secondary {
     width: 100%;
+    padding: 0.85rem;
+    justify-content: center;
+  }
+
+  .hero-badge {
+    max-width: 100%;
+    white-space: normal;
+    text-align: center;
+    padding: 0.4rem 0.8rem;
+    height: auto;
   }
 
   .hero-subtitle br {
@@ -405,3 +434,19 @@ h1, h2, h3, h4, h5, h6 {
   }
 }
 
+@media screen and (max-width: 480px) {
+  .hero-wrapper {
+    padding: 1.5rem 0.5rem 3rem;
+  }
+
+  .hero-title {
+    font-size: 2rem;
+    line-height: 1.1;
+  }
+  
+  .hero-badge {
+    font-size: 0.7rem;
+    gap: 0.4rem;
+    padding: 0.3rem 0.6rem;
+  }
+}
