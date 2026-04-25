@@ -1,0 +1,239 @@
+.landing-page-wrapper{
+  flex:1;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  padding:8rem 2rem 10rem;
+}
+
+.landing-page{
+  max-width:960px;
+  width:100%;
+  text-align:center;
+  position:relative;
+  z-index:10;
+}
+
+.landing-content{
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+}
+
+.update-badge{
+  display:inline-flex;
+  align-items:center;
+  gap:0.6rem;
+  padding:0.3rem 0.3rem 0.3rem 1rem;
+  background:rgba(255, 255, 255, 0.7);
+  backdrop-filter:blur(8px);
+  border:1px solid rgba(15, 23, 42, 0.08);
+  box-shadow:0 2px 10px rgba(0, 0, 0, 0.02);
+  border-radius:999px;
+  font-size:0.875rem;
+  font-weight:500;
+  color:var(--color-text-main);
+  margin-bottom:2.5rem;
+  transition:all 0.2s ease;
+  cursor:pointer;
+}
+
+.update-badge:hover{
+  background:white;
+  border-color:rgba(15, 23, 42, 0.15);
+  box-shadow:0 4px 12px rgba(0, 0, 0, 0.05);
+}
+
+.dot-indicator{
+  width:6px;
+  height:6px;
+  background-color:var(--color-primary);
+  border-radius:50%;
+  box-shadow:0 0 8px var(--color-primary);
+}
+
+.arrow-icon{
+  background:var(--color-text-main);
+  color:white;
+  border-radius:50%;
+  width:24px;
+  height:24px;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  font-size:0.8rem;
+  transition:transform 0.2s ease;
+}
+
+.update-badge:hover .arrow-icon{
+  transform:translateX(2px);
+}
+
+.main-title{
+  font-family:'Outfit',sans-serif;
+  font-size:clamp(3.5rem, 10vw, 6.5rem);
+  line-height:1.05;
+  font-weight:800;
+  letter-spacing:-0.04em;
+  color:var(--color-text-main);
+  margin-bottom:1.5rem;
+}
+
+.highlighted-text{
+  background:linear-gradient(135deg, var(--color-primary), var(--color-primary-dark), var(--color-primary-light), var(--color-primary));
+  background-size:300% 300%;
+  -webkit-background-clip:text;
+  background-clip:text;
+  -webkit-text-fill-color:transparent;
+  display:inline-block;
+}
+
+.shimmer-animation{
+  animation:shimmer 6s ease infinite;
+}
+
+.description-text{
+  font-size:clamp(1.125rem, 2.5vw, 1.35rem);
+  color:var(--color-text-muted);
+  max-width:650px;
+  line-height:1.6;
+  font-weight:400;
+  letter-spacing:-0.01em;
+  margin-bottom:3.5rem;
+}
+
+.button-group{
+  display:flex;
+  gap:1rem;
+}
+
+.start-button,.demo-button{
+  padding:0.85rem 2.2rem;
+  border-radius:999px;
+  font-size:1rem;
+  font-weight:500;
+  cursor:pointer;
+  transition:all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+  border:1px solid transparent;
+}
+
+.start-button{
+  background-color:var(--color-text-main);
+  color:white;
+  box-shadow:0 4px 14px 0 rgba(15, 23, 42, 0.15);
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  gap:0.4rem;
+}
+
+.start-button .start-icon{
+  transition:transform 0.2s ease;
+}
+
+.start-button:hover .start-icon{
+  transform:translateX(3px);
+}
+
+.start-button:hover{
+  background-color:#000;
+  transform:translateY(-2px);
+  box-shadow:0 8px 24px rgba(15, 23, 42, 0.2);
+}
+
+.demo-button{
+  background-color:white;
+  color:var(--color-text-main);
+  border:1px solid var(--color-border);
+  box-shadow:var(--shadow-sm);
+}
+
+.demo-button:hover{
+  background-color:var(--color-background);
+  border-color:#cbd5e1;
+  transform:translateY(-2px);
+}
+
+.fade-up-animation{
+  opacity:0;
+  transform:translateY(20px);
+  animation:fadeInUpStagger 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+@keyframes fadeInUpStagger{
+  0%{
+    opacity:0;
+    transform:translateY(30px);
+  }
+  100%{
+    opacity:1;
+    transform:translateY(0);
+  }
+}
+
+@keyframes shimmer{
+  0%{background-position:0% 50%;}
+  50%{background-position:100% 50%;}
+  100%{background-position:0% 50%;}
+}
+
+@media screen and (max-width: 768px){
+  .landing-page-wrapper{
+    padding:2.5rem 1rem 5rem;
+  }
+
+  .main-title{
+    font-size:clamp(2.2rem, 8vw, 3rem);
+    letter-spacing:-0.02em;
+    word-break:break-word;
+    hyphens:auto;
+  }
+
+  .description-text{
+    font-size:1.05rem;
+    padding:0;
+    margin-bottom:2rem;
+  }
+
+  .button-group{
+    flex-direction:column;
+    width:100%;
+    max-width:100%;
+    gap:0.8rem;
+  }
+  
+  .start-button,.demo-button{
+    width:100%;
+    padding:0.85rem;
+    justify-content:center;
+  }
+
+  .update-badge{
+    max-width:100%;
+    white-space:normal;
+    text-align:center;
+    padding:0.4rem 0.8rem;
+    height:auto;
+  }
+
+  .description-text br{
+    display:none;
+  }
+}
+
+@media screen and (max-width: 480px){
+  .landing-page-wrapper{
+    padding:1.5rem 0.5rem 3rem;
+  }
+
+  .main-title{
+    font-size:2rem;
+    line-height:1.1;
+  }
+  
+  .update-badge{
+    font-size:0.7rem;
+    gap:0.4rem;
+    padding:0.3rem 0.6rem;
+  }
+}

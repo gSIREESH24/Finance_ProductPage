@@ -1,0 +1,106 @@
+.navbar-container{
+  position:sticky;
+  top:0;
+  z-index:50;
+  background:rgba(255, 255, 255, 0.8);
+  backdrop-filter:blur(12px);
+  border-bottom:1px solid rgba(226, 232, 240, 0.8);
+}
+
+.navbar-content{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  height:80px;
+}
+
+.brand-logo{
+  font-family:'Outfit',sans-serif;
+  font-size:1.5rem;
+  font-weight:800;
+  color:var(--color-text-main);
+  display:flex;
+  align-items:center;
+  gap:0.5rem;
+  text-decoration:none;
+}
+
+.brand-icon{
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  width:32px;
+  height:32px;
+  background:linear-gradient(135deg, var(--color-primary-light), var(--color-primary-dark));
+  border-radius:8px;
+  color:white;
+  font-weight:bold;
+}
+
+.navigation-menu{
+  display:flex;
+  gap:2.5rem;
+  list-style:none;
+}
+
+.navigation-menu a{
+  text-decoration:none;
+  color:var(--color-text-muted);
+  font-weight:500;
+  font-size:0.95rem;
+  transition:all 0.2s ease;
+}
+
+.navigation-menu a:hover{
+  color:var(--color-primary);
+}
+
+.navigation-buttons{
+  display:flex;
+  align-items:center;
+  gap:1rem;
+}
+
+.login-button{
+  background:transparent;
+  border:none;
+  color:var(--color-text-main);
+  font-weight:600;
+  font-size:0.95rem;
+  cursor:pointer;
+  padding:0.5rem 1rem;
+  border-radius:0.5rem;
+  transition:background 0.2s ease;
+}
+
+.login-button:hover{
+  background:rgba(14, 165, 233, 0.05);
+  color:var(--color-primary);
+}
+
+.signup-button{
+  background-color:var(--color-text-main);
+  color:white;
+  border:none;
+  padding:0.6rem 1.2rem;
+  border-radius:0.5rem;
+  font-weight:500;
+  font-size:0.95rem;
+  cursor:pointer;
+  transition:all 0.2s ease;
+}
+
+.signup-button:hover{
+  background-color:#000;
+  transform:translateY(-1px);
+}
+
+@media screen and (max-width: 768px){
+  .navigation-menu,.navigation-buttons{
+    display:none;
+  }
+  
+  .navbar-content{
+    justify-content:center;
+  }
+}

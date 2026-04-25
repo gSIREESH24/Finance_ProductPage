@@ -1,23 +1,24 @@
 import React from 'react';
+import './Navbar.css';
 
-const Navbar = () => {
+const Navbar=()=>{
   return (
-    <div className="navbar-wrapper">
+    <div className="navbar-container">
       <div className="container">
-        <nav className="navbar">
-          <a href="/" className="logo">
-            <div className="logo-icon">R</div>
+        <nav className="navbar-content">
+          <a href="/" className="brand-logo">
+            <div className="brand-icon">R</div>
             RupeeVyze
           </a>
-          <ul className="nav-links">
+          <ul className="navigation-menu">
             <li><a href="#products">Products</a></li>
             <li><a href="#solutions">Solutions</a></li>
             <li><a href="#pricing">Pricing</a></li>
             <li><a href="#resources">Resources</a></li>
           </ul>
-          <div className="nav-actions">
-            <button className="btn-ghost">Log in</button>
-            <button className="btn-nav-cta">Open Account</button>
+          <div className="navigation-buttons">
+            <button className="login-button">Log in</button>
+            <button className="signup-button">Open Account</button>
           </div>
         </nav>
       </div>

@@ -2,7 +2,7 @@ import React from 'react';
 import Navbar from './components/Navbar';
 import LandingSection from './components/LandingSection';
 
-function App() {
+function App(){
   return (
     <>
       <div className="bg-mesh"></div>
